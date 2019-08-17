@@ -12,9 +12,9 @@ const Container = styled(Link)`
   box-shadow: 2px 2px 2px #95a5a6;
   font-weight: bold;
   :hover{
-    border: 2px solid #f1c40f;
-    color: #f1c40f;
-    box-shadow: 2px 2px 2px #f1c40f;
+    border: 2px solid #ffcc03;
+    color: #ffcc03;
+    box-shadow: 0px 0px 15px #ffcc03;
     transition: .5s;
   }
 `;
