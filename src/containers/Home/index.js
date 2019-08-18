@@ -1,24 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as homeActions from '../../modules/home';
 import Button from '../../components/Button';
 import { Container, Regions, Img } from './styled';
 
 class Home extends React.Component {
   render(){
+    console.log(this.props.home);
     return(
       <Container>
         <Img src="./pokedex1.png"/>
         <Regions>
           <Button href="/test" text="kanto"/>
-          <Button href="/test" text="johto"/>
-          <Button href="/test" text="hoenn"/>
-          <Button href="/test" text="sinnoh"/>
-          <Button href="/test" text="unova"/>
-          <Button href="/test" text="kalos"/>
-          <Button href="/test" text="alola"/>
         </Regions>
       </Container>
     )
   }
 }
 
-export default Home;
+const mapStateToProps = state => ({
+  home: state.home
+})
+
+export default connect(mapStateToProps, dispatch => bindActionCreators(homeActions, dispatch))(Home)
