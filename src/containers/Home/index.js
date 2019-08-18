@@ -7,12 +7,18 @@ import { Container, Regions, Img } from './styled';
 
 class Home extends React.Component {
   render(){
-    console.log(this.props.home);
+    let regions = this.props.home.regions.results !== undefined ? this.props.home.regions.results : []
     return(
       <Container>
         <Img src="./pokedex1.png"/>
         <Regions>
-          <Button href="/test" text="kanto"/>
+          {
+            regions.map( (region, i) => {
+              return (
+                <Button key={i} href="" text={region.name}/>
+              )
+            })
+          }
         </Regions>
       </Container>
     )
