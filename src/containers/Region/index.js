@@ -19,8 +19,9 @@ class Region extends React.Component {
         <List>
           {
             regionPokemones.map((pokemones, i) => {
+              let url = `/pokemon/info/${pokemones.entry_number}`
               return (
-                <Pokemon to="/pokemon/info" key={i}>{pokemones.pokemon_species.name}</Pokemon>
+                <Pokemon key={i} to={url}>{pokemones.pokemon_species.name}</Pokemon>
               )
             })
           }

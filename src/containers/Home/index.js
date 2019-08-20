@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as homeActions from '../../modules/home';
 import Button from '../../components/Button';
-import { Container, Regions, Img, Content, Mewtwo} from './styled';
+import { Container, Regions, Img, Content, Mewtwo } from './styled';
 
 class Home extends React.Component {
   render(){
@@ -32,7 +32,8 @@ class Home extends React.Component {
 
 const mapStateToProps = state => ({
   home: state.home,
-  region: state.region
+  region: state.region,
+  info: state.info
 })
 
 export default connect(mapStateToProps, dispatch => bindActionCreators(homeActions, dispatch))(Home)
