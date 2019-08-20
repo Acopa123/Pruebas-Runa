@@ -8,7 +8,7 @@ const api = 'https://pokeapi.co/api/v2';
 
 function* pokemonRegions(){
   const apiResponse = yield call(request, `${api}/region`);
-
+  apiResponse.results.pop()
   yield put(getRegions(apiResponse));
 }
 
@@ -21,9 +21,17 @@ function* pokemonRegion(data){
 }
 
 function* pokemon(data){
-  const apiResponse = yield call(request, `${api}/pokemon-species/${data.payload}`);
+  const pokemonSpecies = yield call(request, `${api}/pokemon-species/${data.payload}`);
+  const pokemon = yield call(request, `${api}/pokemon/${data.payload}`);
+  let descriptions = pokemonSpecies.flavor_text_entries.filter( description => description.language.name === 'es')
+  let pokemonDescription = {
+    name: pokemon.species.name,
+    generation: pokemonSpecies.generation.name,
+    description: descriptions,
+    images: pokemon.sprites
+  }
 
-  yield put(getPokemon(apiResponse));
+  yield put(getPokemon(pokemonDescription));
 }
 
 export default function* rootSaga(){
