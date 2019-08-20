@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
 
 const Container = styled.div`
 
@@ -20,29 +19,6 @@ const Div = styled.div`
 
 const Img = styled.img`
   width: 150px;
-`;
-
-const Ul = styled.ul`
-  display: flex;
-  flex-direction: row;
-`;
-
-const Li = styled.li`
-  list-style: none;
-`;
-
-const A = styled(Link)`
-  padding: 20px;
-  border-bottom: 2px solid  #ff0000;
-  color: #fff;
-  font-size: 16px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  :hover{
-    border-bottom: 2px solid #ffcc03;
-    transition: 0.5s;
-  }
 `;
 
 const Form = styled.form`
@@ -71,4 +47,4 @@ const Button = styled.button`
   color: #dcdcdc;
 `;
 
-export { Container, Nav, Div, Img, Ul, Li, A, Form, Input, Button }
+export { Container, Nav, Div, Img, Form, Input, Button }
