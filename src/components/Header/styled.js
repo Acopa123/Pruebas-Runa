@@ -18,10 +18,6 @@ const Div = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.div`
-
-`;
-
 const Img = styled.img`
   width: 150px;
 `;
@@ -75,4 +71,4 @@ const Button = styled.button`
   color: #dcdcdc;
 `;
 
-export { Container, Nav, Div, Logo, Img, Ul, Li, A, Form, Input, Button }
+export { Container, Nav, Div, Img, Ul, Li, A, Form, Input, Button }

@@ -15,7 +15,7 @@ class Home extends React.Component {
           {
             regions.map( (region, i) => {
               return (
-                <Button key={i} href="" text={region.name}/>
+                <Button key={i} href={`/region/${region.name}/${i+1}`} text={region.name}/>
               )
             })
           }
@@ -26,7 +26,8 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  home: state.home
+  home: state.home,
+  region: state.region
 })
 
 export default connect(mapStateToProps, dispatch => bindActionCreators(homeActions, dispatch))(Home)

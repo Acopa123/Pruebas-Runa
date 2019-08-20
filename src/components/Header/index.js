@@ -1,21 +1,21 @@
 import React from 'react';
-
-import { Container, Nav, Div, Logo, Img, Ul, Li, A, Form, Input, Button } from './styled';
+import { Link } from "react-router-dom";
+import { Container, Nav, Div, Img, Ul, Li, A, Form, Input, Button } from './styled';
 
 const Header = (props) => {
   return (
     <Container>
       <Nav>
         <Div>
-          <Logo>
+          <Link to="/">
             <Img src="/logo.png"/>
-          </Logo>
+          </Link>
           <Ul>
             <Li>
-              <A href="#">Inicio</A>
+              <A to="/">Inicio</A>
             </Li>
             <Li>
-              <A href="#">Informacion</A>
+              <A to="#">Informacion</A>
             </Li>
           </Ul>
           <Form>

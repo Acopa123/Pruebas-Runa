@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import configureStore from './configureStore';
 import Home from './containers/Home';
+import Region from './containers/Region';
 import Header from './components/Header';
 
 const store = configureStore();
@@ -15,6 +16,7 @@ class App extends Component {
           <Header/>
           <div>
             <Route exact path="/" component={Home} />
+            <Route path="/region/:region/:id" component={Region} />
           </div>
         </Router>
       </Provider>
