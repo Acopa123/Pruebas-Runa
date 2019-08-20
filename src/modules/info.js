@@ -1,8 +1,10 @@
 export const GET_POKEMON_ID = 'prueba-runa/Info/GET_POKEMON_ID';
 export const GET_POKEMON = 'prueba-runa/Info/GET_POKEMON';
+export const LOADING = 'prueba-runa/Info/LOADING';
 
 const initialState = {
   info: [],
+  loading: false
 }
 
 export default function reducer(state = initialState, action){
@@ -11,6 +13,9 @@ export default function reducer(state = initialState, action){
       return state
     case GET_POKEMON:
       state.info = action.payload;
+      return {...state}
+    case LOADING:
+      state.loading = action.payload;
       return {...state}
     default:
       return state;
@@ -27,6 +32,13 @@ export function getPokemonId(payload){
 export function getPokemon(payload){
   return{
     type: GET_POKEMON,
+    payload,
+  }
+}
+
+export function loading(payload){
+  return{
+    type: LOADING,
     payload,
   }
 }

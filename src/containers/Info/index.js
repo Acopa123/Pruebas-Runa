@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as infoActions from '../../modules/info';
+import Loading from '../../components/Loading';
 import { Container, Title, Content, Header, Body, Description, Span, Img } from './styled';
 
 class Info extends React.Component {
@@ -14,9 +15,9 @@ class Info extends React.Component {
     let pokemon = this.props.info.info
     let description = pokemon.description !== undefined ? pokemon.description : []
     let images = pokemon.images !== undefined ? Object.keys(pokemon.images) : []
-
     return(
       <Container>
+        <Loading loading={this.props.info.loading}/>
         <Content>
           <Header>
             <Title>{pokemon.name}</Title>
@@ -47,7 +48,8 @@ class Info extends React.Component {
 const mapStateToProps = state => ({
   home: state.home,
   region: state.region,
-  info: state.info
+  info: state.info,
+  loading: state.loading
 })
 
 export default connect(mapStateToProps, dispatch => bindActionCreators(infoActions, dispatch))(Info)

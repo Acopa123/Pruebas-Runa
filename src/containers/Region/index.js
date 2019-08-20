@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as regionActions from '../../modules/region';
+import Loading from '../../components/Loading';
 import { Container, Title, List, Pokemon } from './styled';
 
 class Region extends React.Component {
@@ -15,6 +16,7 @@ class Region extends React.Component {
 
     return(
       <Container>
+        <Loading loading={this.props.info.loading}/>
         <Title>Lista de Pokémon de la Region {this.props.match.params.region}: {regionPokemones.length}</Title>
         <List>
           {
@@ -33,7 +35,9 @@ class Region extends React.Component {
 
 const mapStateToProps = state => ({
   home: state.home,
-  region: state.region
+  region: state.region,
+  info: state.info,
+  loading: state.loading
 })
 
 export default connect(mapStateToProps, dispatch => bindActionCreators(regionActions, dispatch))(Region)
