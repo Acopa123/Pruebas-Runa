@@ -1,24 +1,32 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  height: 89.8vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
 `;
 
 const Regions = styled.div`
-  width: 85%;
+  width: 60%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 60px 0px 0px 0px;
 `;
 
 const Img = styled.img`
   width: 300px;
-  margin: 60px 0px 60px 0px;
+  margin: 60px 0px 0px 0px;
 `;
 
-export { Container, Regions, Img }
+const Content = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const Mewtwo = styled.img`
+  width: 30%;
+`;
+
+export { Container, Regions, Img, Mewtwo, Content }

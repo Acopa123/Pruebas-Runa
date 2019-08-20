@@ -4,7 +4,6 @@ import { getRegions } from '../modules/home';
 import { GET_REGION_ID, getRegion } from '../modules/region';
 
 const api = 'https://pokeapi.co/api/v2';
-// https://pokeapi.co/api/v2/pokedex/2/
 
 function* pokemonRegions(){
   const apiResponse = yield call(request, `${api}/region`);

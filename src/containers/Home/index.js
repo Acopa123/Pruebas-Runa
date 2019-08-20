@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as homeActions from '../../modules/home';
 import Button from '../../components/Button';
-import { Container, Regions, Img } from './styled';
+import { Container, Regions, Img, Content, Mewtwo} from './styled';
 
 class Home extends React.Component {
   render(){
@@ -11,15 +11,20 @@ class Home extends React.Component {
     return(
       <Container>
         <Img src="./pokedex1.png"/>
-        <Regions>
-          {
-            regions.map( (region, i) => {
-              return (
-                <Button key={i} href={`/region/${region.name}/${i+1}`} text={region.name}/>
-              )
-            })
-          }
-        </Regions>
+
+        <Content>
+          <Regions>
+            {
+              regions.map( (region, i) => {
+                return (
+                  <Button key={i} href={`/region/${region.name}/${i+1}`} text={region.name}/>
+                )
+              })
+            }
+          </Regions>
+          <Mewtwo src="./mewtwo.png"/>
+        </Content>
+
       </Container>
     )
   }
