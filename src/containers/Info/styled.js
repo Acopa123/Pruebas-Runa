@@ -11,6 +11,10 @@ const Title = styled.h2`
   text-transform: uppercase;
   font-size: 20px;
   width: 30%;
+  @media (min-width: 300px) and (max-width: 670px) {
+    font-size: 12px;
+    width: 100%;
+  }
 `;
 
 const Content = styled.div`
@@ -18,6 +22,10 @@ const Content = styled.div`
   flex-direction: column;
   margin: 30px;
   width: 600px;
+  @media (min-width: 300px) and (max-width: 670px) {
+    width: 85%;
+    margin: 10px;
+  }
 `;
 
 const Header = styled.div`
@@ -28,6 +36,9 @@ const Header = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media (min-width: 300px) and (max-width: 670px) {
+    flex-direction: column;
+  }
 `;
 
 const Body = styled.div`
@@ -39,6 +50,7 @@ const Body = styled.div`
 
 const Description = styled.p`
   color: #ecf0f1;
+  text-align: justify;
 `;
 
 const Span = styled.span`
@@ -55,6 +67,7 @@ const NoFound = styled.h1`
   color: #c0392b;
   text-transform: uppercase;
   font-size: 40px;
+  text-align: center;
 `;
 
 export { Container, Title, Content, Header, Body, Description, Span, Img, NoFound }

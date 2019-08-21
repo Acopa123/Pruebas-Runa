@@ -14,6 +14,14 @@ const Title = styled.h1`
   font-size: 40px;
   text-align: center;
   width: 30%;
+  @media (min-width: 417px) and (max-width: 1340px) {
+    font-size: 30px;
+    width: 80%;
+  }
+  @media (min-width: 300px) and (max-width: 416px) {
+    font-size: 16px;
+    width: 80%;
+  }
 `;
 
 const List = styled.div`

@@ -9,6 +9,7 @@ class Info extends React.Component {
   componentDidMount(){
     let idRegion = this.props.match.params.id
     this.props.getPokemonId(idRegion)
+    this.props.loading(true)
   }
 
   render(){

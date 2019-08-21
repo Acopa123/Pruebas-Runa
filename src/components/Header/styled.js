@@ -7,6 +7,7 @@ const Container = styled.div`
 const Nav = styled.nav`
   height: 65px;
   background-color: #ff0000;
+  width: 100%;
 `;
 
 const Div = styled.div`
@@ -19,6 +20,9 @@ const Div = styled.div`
 
 const Img = styled.img`
   width: 150px;
+  @media (min-width: 300px) and (max-width: 416px) {
+    width: 100px;
+  }
 `;
 
 const Form = styled.form`
@@ -34,6 +38,10 @@ const Input = styled.input`
   background-color: #fff;
   box-shadow: 1px 1px 5px #dcdcdc inset;
   border: 0;
+  @media (min-width: 300px) and (max-width: 416px) {
+    padding: 4px 5px 4px 5px;
+    font-size: 14px;
+  }
 `;
 
 const Button = styled.button`
@@ -45,6 +53,9 @@ const Button = styled.button`
   border: 0;
   cursor: pointer;
   color: #dcdcdc;
+  @media (min-width: 300px) and (max-width: 416px) {
+    font-size: 11px;
+  }
 `;
 
 export { Container, Nav, Div, Img, Form, Input, Button }

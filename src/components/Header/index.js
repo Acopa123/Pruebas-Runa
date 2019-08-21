@@ -5,8 +5,10 @@ import { Container, Nav, Div, Img, Form, Input, Button } from './styled';
 function request(event, props){
   event.preventDefault()
   let value = event.target[0].value
-  props.history.push(`/pokemon/info/${value}`)
-  window.location.reload()
+  if (value !== '') {
+    props.history.push(`/pokemon/info/${value}`)
+    window.location.reload()
+  }
 }
 
 const Header = (props) => {

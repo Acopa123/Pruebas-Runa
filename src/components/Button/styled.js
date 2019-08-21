@@ -11,6 +11,7 @@ const Container = styled(Link)`
   font-family: 'Indie Flower', cursive;
   box-shadow: 2px 2px 2px #95a5a6;
   font-weight: bold;
+  margin: 8px;
   :hover{
     border: 2px solid #ffcc03;
     color: #ffcc03;
