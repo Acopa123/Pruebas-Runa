@@ -51,4 +51,10 @@ const Img = styled.img`
   margin: 0px 10px 0px 10px;
 `;
 
-export { Container, Title, Content, Header, Body, Description, Span, Img }
+const NoFound = styled.h1`
+  color: #c0392b;
+  text-transform: uppercase;
+  font-size: 40px;
+`;
+
+export { Container, Title, Content, Header, Body, Description, Span, Img, NoFound }

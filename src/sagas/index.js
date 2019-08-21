@@ -10,7 +10,7 @@ function* pokemonRegions(){
   yield put(loading(true));
   const apiResponse = yield call(request, `${api}/region`);
   apiResponse.results.pop()
-  
+
   yield put(getRegions(apiResponse));
   yield put(loading(false));
 }
@@ -27,17 +27,20 @@ function* pokemonRegion(data){
 
 function* pokemon(data){
   yield put(loading(true));
-  const pokemonSpecies = yield call(request, `${api}/pokemon-species/${data.payload}`);
   const pokemon = yield call(request, `${api}/pokemon/${data.payload}`);
-  let descriptions = pokemonSpecies.flavor_text_entries.filter( description => description.language.name === 'es')
-  let pokemonDescription = {
-    name: pokemon.species.name,
-    generation: pokemonSpecies.generation.name,
-    description: descriptions,
-    images: pokemon.sprites
+  if (pokemon !== undefined) {
+    const pokemonSpecies = yield call(request, `${api}/pokemon-species/${pokemon.id}`);
+    let descriptions = pokemonSpecies.flavor_text_entries.filter( description => description.language.name === 'es')
+    let pokemonDescription = {
+      name: pokemon.species.name,
+      generation: pokemonSpecies.generation.name,
+      description: descriptions,
+      images: pokemon.sprites
+    }
+
+    yield put(getPokemon(pokemonDescription));
   }
 
-  yield put(getPokemon(pokemonDescription));
   yield put(loading(false));
 }
 
